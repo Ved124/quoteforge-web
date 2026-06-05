@@ -85,7 +85,7 @@ function TabletMockup() {
           </div>
 
           {/* CTA in mockup */}
-          <button className="w-full bg-[#C9A84C] text-[#070E1A] text-[11px] font-bold py-2.5 rounded-lg">
+          <button suppressHydrationWarning className="w-full bg-[#C9A84C] text-[#070E1A] text-[11px] font-bold py-2.5 rounded-lg">
             Next: Choose Machine →
           </button>
         </div>

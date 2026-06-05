@@ -55,6 +55,7 @@ function FAQItem({ faq, index }: { faq: (typeof faqs)[0]; index: number }) {
         onClick={() => setOpen(!open)}
         className="w-full flex items-center justify-between gap-4 px-6 py-5 text-left"
         aria-expanded={open}
+        suppressHydrationWarning
       >
         <span className="font-semibold text-[#F0F4FF] text-sm md:text-base">{faq.q}</span>
         <ChevronDown

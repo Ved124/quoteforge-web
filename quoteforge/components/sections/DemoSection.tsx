@@ -109,7 +109,7 @@ const steps = [
             <span className="text-base font-black text-[#F0F4FF]">₹57,23,000</span>
           </div>
         </div>
-        <button className="w-full bg-[#C9A84C] text-[#070E1A] text-sm font-bold py-3 rounded-lg">
+        <button suppressHydrationWarning className="w-full bg-[#C9A84C] text-[#070E1A] text-sm font-bold py-3 rounded-lg">
           Download PDF Quote →
         </button>
       </div>
@@ -164,6 +164,7 @@ export default function DemoSection() {
                 key={step.id}
                 id={`demo-step-${i}`}
                 onClick={() => setActiveStep(i)}
+                suppressHydrationWarning
                 className={`flex-1 py-2.5 px-2 text-xs font-medium rounded-lg transition-all duration-200 ${
                   activeStep === i
                     ? "bg-[#C9A84C] text-[#070E1A]"
@@ -196,6 +197,7 @@ export default function DemoSection() {
               <button
                 key={i}
                 onClick={() => setActiveStep(i)}
+                suppressHydrationWarning
                 className={`h-1.5 rounded-full transition-all duration-300 ${
                   activeStep === i ? "w-8 bg-[#C9A84C]" : "w-1.5 bg-[#C9A84C30]"
                 }`}

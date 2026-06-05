@@ -175,6 +175,7 @@ export default function ContactSection() {
                     placeholder="Rajesh Mehta"
                     value={form.name}
                     onChange={handleChange}
+                    suppressHydrationWarning
                     className={`w-full bg-[#0B1628] text-[#F0F4FF] placeholder-[#6B7FA3]/50 rounded-xl px-4 py-3 text-sm outline-none border transition-all duration-200
                       ${fieldErrors.name
                         ? "border-red-500/60 focus:border-red-500"
@@ -203,6 +204,7 @@ export default function ContactSection() {
                     maxLength={10}
                     value={form.phone}
                     onChange={handleChange}
+                    suppressHydrationWarning
                     className={`w-full bg-[#0B1628] text-[#F0F4FF] placeholder-[#6B7FA3]/50 rounded-xl px-4 py-3 text-sm outline-none border transition-all duration-200
                       ${fieldErrors.phone
                         ? "border-red-500/60 focus:border-red-500"
@@ -231,6 +233,7 @@ export default function ContactSection() {
                       placeholder="Mehta Engineering"
                       value={form.company}
                       onChange={handleChange}
+                      suppressHydrationWarning
                       className={`w-full bg-[#0B1628] text-[#F0F4FF] placeholder-[#6B7FA3]/50 rounded-xl px-4 py-3 text-sm outline-none border transition-all duration-200
                         ${fieldErrors.company
                           ? "border-red-500/60 focus:border-red-500"
@@ -257,6 +260,7 @@ export default function ContactSection() {
                       placeholder="Ahmedabad"
                       value={form.city}
                       onChange={handleChange}
+                      suppressHydrationWarning
                       className={`w-full bg-[#0B1628] text-[#F0F4FF] placeholder-[#6B7FA3]/50 rounded-xl px-4 py-3 text-sm outline-none border transition-all duration-200
                         ${fieldErrors.city
                           ? "border-red-500/60 focus:border-red-500"
@@ -274,6 +278,7 @@ export default function ContactSection() {
                   id="cta-final-button"
                   type="submit"
                   disabled={state === "submitting"}
+                  suppressHydrationWarning
                   className="w-full flex items-center justify-center gap-2 bg-[#C9A84C] text-[#070E1A] font-bold py-4 rounded-xl hover:bg-[#e8c97a] active:scale-[0.98] transition-all duration-200 shadow-lg shadow-[#C9A84C20] disabled:opacity-70 disabled:cursor-not-allowed mt-2"
                 >
                   {state === "submitting" ? (
