@@ -159,11 +159,11 @@ export default function HeroSection() {
             className="flex flex-wrap gap-4"
           >
             <a
-              href="#demo"
+              href="#contact"
               id="hero-cta-primary"
               className="group inline-flex items-center gap-2 px-7 py-4 bg-[#C9A84C] text-[#070E1A] font-bold rounded-xl hover:bg-[#e8c97a] transition-all duration-200 shadow-lg shadow-[#C9A84C20]"
             >
-              See Live Demo
+              Request a Free Demo
               <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
             </a>
             <a

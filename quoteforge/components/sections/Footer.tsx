@@ -38,7 +38,7 @@ export default function Footer() {
 
           {/* Email */}
           <a
-            href="mailto:contact@quoteforge.in"
+            href="#contact"
             id="footer-email"
             className="flex items-center gap-2 text-sm text-[#6B7FA3] hover:text-[#C9A84C] transition-colors"
           >
