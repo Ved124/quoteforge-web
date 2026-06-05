@@ -1,13 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import twilio from 'twilio'
 
-const client = twilio(
-  process.env.TWILIO_ACCOUNT_SID!,
-  process.env.TWILIO_AUTH_TOKEN!
-)
-
-const APPS_SCRIPT_URL = process.env.APPS_SCRIPT_URL!
-
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json()
@@ -29,13 +22,23 @@ export async function POST(req: NextRequest) {
     }
 
     // ── 1. Log to Google Sheet ──────────────────────────
-    await fetch(APPS_SCRIPT_URL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ name, phone, company, city }),
-    })
+    try {
+      await fetch(process.env.APPS_SCRIPT_URL!, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, phone, company, city }),
+      })
+    } catch (sheetError) {
+      console.error('Sheet logging failed:', sheetError)
+      // continues even if sheet fails
+    }
 
     // ── 2. Send WhatsApp via Twilio ─────────────────────
+    const client = twilio(
+      process.env.TWILIO_ACCOUNT_SID!,
+      process.env.TWILIO_AUTH_TOKEN!
+    )
+
     await client.messages.create({
       from: process.env.TWILIO_WHATSAPP_FROM!,
       to: process.env.TWILIO_WHATSAPP_TO!,
